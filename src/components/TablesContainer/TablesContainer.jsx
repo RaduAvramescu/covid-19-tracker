@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import {
+  Grid,
   Table,
   TableBody,
   TableCell,
@@ -57,7 +58,12 @@ export default function TablesContainer() {
 
   let rows = [createData("Loading")];
 
-  if (!getedTableData.data) return <CircularProgress />;
+  if (!getedTableData.data)
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
   else {
     rows = [
       createData(

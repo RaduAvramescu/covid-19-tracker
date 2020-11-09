@@ -7,7 +7,12 @@ import styles from "./CardsContainer.module.css";
 const CardsContainer = ({
   data: { confirmed, recovered, deaths, lastUpdate },
 }) => {
-  if (!deaths) return <CircularProgress />;
+  if (!deaths)
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
 
   return (
     <div className={styles.container}>
