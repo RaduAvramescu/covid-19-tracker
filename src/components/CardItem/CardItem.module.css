@@ -1,0 +1,54 @@
+.card {
+  margin: 0 2% !important;
+}
+
+@media only screen and (max-width: 959px) {
+  .card {
+    margin: 2% 0 !important;
+  }
+}
+
+.confirmed {
+  background-color: whitesmoke !important;
+  border: 6px solid rgba(0, 0, 255, 0.5);
+}
+
+.confirmed:hover {
+  border: 6px solid rgba(0, 0, 255, 1);
+  transform: scale(1.1);
+  transition: border 0.6s ease, transform 0.6s ease;
+}
+
+.recovered {
+  background-color: whitesmoke !important;
+  border: 6px solid rgba(0, 255, 0, 0.5);
+}
+
+.recovered:hover {
+  border: 6px solid rgba(0, 255, 0, 1);
+  transform: scale(1.1);
+  transition: border 0.6s ease, transform 0.6s ease;
+}
+
+.deaths {
+  background-color: whitesmoke !important;
+  border: 6px solid rgba(255, 0, 0, 0.5);
+}
+
+.deaths:hover {
+  border: 6px solid rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+  transition: border 0.6s ease, transform 0.6s ease;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
