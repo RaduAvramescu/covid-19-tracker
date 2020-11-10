@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
+  },
+  navbar: {
+    backgroundColor: "#212527",
   },
 }));
 
@@ -39,7 +39,7 @@ export default function NavBar(props) {
   return (
     <div className={classes.root}>
       <HideOnScroll {...props}>
-        <AppBar>
+        <AppBar className={classes.navbar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title} align="center">
               COVID-19 TRACKER

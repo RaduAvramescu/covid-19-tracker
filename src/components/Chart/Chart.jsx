@@ -1,14 +1,15 @@
 import React from "react";
 
-import { Grid } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { Bar } from "react-chartjs-2";
-import styles from "./Chart.module.css";
 
 const Chart = ({ country, data: { confirmed, recovered, deaths } }) => {
   const bar = deaths ? (
-    <Grid container mx="auto">
+    <Box mt="2rem">
+      <Typography variant="h4" align="center" gutterBottom>
+        CHART
+      </Typography>
       <Bar
-        mx="auto"
         data={{
           labels: ["Confirmed", "Recovered", "Deaths"],
           datasets: [
@@ -27,10 +28,14 @@ const Chart = ({ country, data: { confirmed, recovered, deaths } }) => {
           legend: { display: false },
         }}
       />
-    </Grid>
+    </Box>
   ) : null;
 
-  return <div className={styles.container}>{country && bar}</div>;
+  return (
+    <Box mx="auto" width="60%">
+      {country && bar}
+    </Box>
+  );
 };
 
 export default Chart;

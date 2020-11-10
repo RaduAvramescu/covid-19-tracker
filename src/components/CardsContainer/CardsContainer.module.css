@@ -1,11 +1,5 @@
-.container {
-  margin: 120px 0;
-  margin-bottom: 30px;
-}
-
 @media only screen and (max-width: 959px) {
   .container {
     margin: 120px 10%;
-    margin-bottom: 30px;
   }
 }

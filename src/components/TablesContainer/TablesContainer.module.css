@@ -1,0 +1,13 @@
+.section {
+  background-color: #212527;
+  color: whitesmoke;
+}
+
+.table {
+  min-width: 700px;
+  width: 25% !important;
+}
+
+.img {
+  width: 20px;
+}

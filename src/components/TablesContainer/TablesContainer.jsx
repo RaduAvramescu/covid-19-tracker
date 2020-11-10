@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import styles from "./TablesContainer.module.css";
+import { withStyles } from "@material-ui/core/styles";
 import {
+  Box,
   Grid,
   Table,
   TableBody,
@@ -17,31 +19,26 @@ import { getTableData } from "../../api";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    color: "whitesmoke",
+    fontSize: 20,
   },
   body: {
-    fontSize: 14,
+    color: "whitesmoke",
+    fontSize: 20,
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
+    backgroundColor: theme.palette.primary.dark,
+
     "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
+      backgroundColor: theme.palette.primary.main,
     },
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
-
 export default function TablesContainer() {
-  const classes = useStyles();
-
   const [getedTableData, setGetedTableData] = useState([]);
 
   useEffect(() => {
@@ -52,11 +49,11 @@ export default function TablesContainer() {
     getData();
   }, [setGetedTableData]);
 
-  function createData(name, confirmed, recovered, deaths) {
-    return { name, confirmed, recovered, deaths };
+  function createData(flag, name, confirmed, recovered, deaths) {
+    return { flag, name, confirmed, recovered, deaths };
   }
 
-  let rows = [createData("Loading")];
+  let rows = [];
 
   if (!getedTableData.data)
     return (
@@ -67,30 +64,35 @@ export default function TablesContainer() {
   else {
     rows = [
       createData(
+        getedTableData.data[0].countryInfo.flag,
         getedTableData.data[0].country,
         getedTableData.data[0].cases,
         getedTableData.data[0].recovered,
         getedTableData.data[0].deaths
       ),
       createData(
+        getedTableData.data[1].countryInfo.flag,
         getedTableData.data[1].country,
         getedTableData.data[1].cases,
         getedTableData.data[1].recovered,
         getedTableData.data[1].deaths
       ),
       createData(
+        getedTableData.data[2].countryInfo.flag,
         getedTableData.data[2].country,
         getedTableData.data[2].cases,
         getedTableData.data[2].recovered,
         getedTableData.data[2].deaths
       ),
       createData(
+        getedTableData.data[3].countryInfo.flag,
         getedTableData.data[3].country,
         getedTableData.data[3].cases,
         getedTableData.data[3].recovered,
         getedTableData.data[3].deaths
       ),
       createData(
+        getedTableData.data[4].countryInfo.flag,
         getedTableData.data[4].country,
         getedTableData.data[4].cases,
         getedTableData.data[4].recovered,
@@ -100,14 +102,13 @@ export default function TablesContainer() {
   }
 
   return (
-    <React.Fragment>
+    <Box className={styles.section} my="2rem" py="2rem" style={{}}>
       <Typography variant="h4" align="center" gutterBottom>
         TOP 5 COUNTRIES
       </Typography>
       <TableContainer>
         <Table
-          style={{ width: "25%" }}
-          className={classes.table}
+          className={styles.table}
           aria-label="customized table"
           align="center"
         >
@@ -123,6 +124,11 @@ export default function TablesContainer() {
             {rows.map((row) => (
               <StyledTableRow key={row.name}>
                 <StyledTableCell component="th" scope="row" align="center">
+                  <img
+                    className={styles.img}
+                    src={row.flag}
+                    alt={`${row.name} Flag`}
+                  />{" "}
                   {row.name}
                 </StyledTableCell>
                 <StyledTableCell align="center">
@@ -154,6 +160,6 @@ export default function TablesContainer() {
           </TableBody>
         </Table>
       </TableContainer>
-    </React.Fragment>
+    </Box>
   );
 }
