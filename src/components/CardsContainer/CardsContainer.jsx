@@ -22,12 +22,7 @@ const CardsContainer = ({
         </Typography>
       </Box>
       <Box className={styles.container} py="2rem">
-        <Grid
-          className={styles.fullWidth}
-          container
-          spacing={4}
-          justify="center"
-        >
+        <Grid container justify="center">
           <CardItem
             className="confirmed"
             cardName="Confirmed"
