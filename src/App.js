@@ -8,6 +8,7 @@ import {
   TablesContainer,
 } from "./components";
 import { getData } from "./api";
+import "./App.css";
 
 class App extends React.Component {
   state = { data: {}, country: "" };

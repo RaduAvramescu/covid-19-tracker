@@ -102,7 +102,7 @@ export default function TablesContainer() {
   }
 
   return (
-    <Box className={styles.section} my="2rem" py="2rem" style={{}}>
+    <Box className={styles.section} py="4rem">
       <Typography variant="h4" align="center" gutterBottom>
         TOP 5 COUNTRIES
       </Typography>

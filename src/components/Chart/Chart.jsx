@@ -5,7 +5,7 @@ import { Bar } from "react-chartjs-2";
 
 const Chart = ({ country, data: { confirmed, recovered, deaths } }) => {
   const bar = deaths ? (
-    <Box mt="2rem">
+    <Box pt="2rem">
       <Typography variant="h4" align="center" gutterBottom>
         CHART
       </Typography>
@@ -32,7 +32,7 @@ const Chart = ({ country, data: { confirmed, recovered, deaths } }) => {
   ) : null;
 
   return (
-    <Box mx="auto" width="60%">
+    <Box mx="auto" width="60%" pb="4rem">
       {country && bar}
     </Box>
   );

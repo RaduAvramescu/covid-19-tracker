@@ -1,0 +1,7 @@
+.title {
+  flex-grow: 1;
+}
+
+.navbar {
+  background-color: #212527 !important;
+}

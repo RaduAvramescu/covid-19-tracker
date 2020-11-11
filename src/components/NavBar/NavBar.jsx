@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
@@ -8,18 +7,7 @@ import {
   useScrollTrigger,
   Button,
 } from "@material-ui/core/";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-  },
-  navbar: {
-    backgroundColor: "#212527",
-  },
-}));
+import styles from "./NavBar.module.css";
 
 function HideOnScroll(props) {
   const trigger = useScrollTrigger({
@@ -34,33 +22,29 @@ function HideOnScroll(props) {
 }
 
 export default function NavBar(props) {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <HideOnScroll {...props}>
-        <AppBar className={classes.navbar}>
-          <Toolbar>
-            <Typography variant="h6" className={classes.title} align="center">
-              COVID-19 TRACKER
-            </Typography>
-            <Button
-              color="inherit"
-              target="_blank"
-              href="https://covid19.mathdro.id/api"
-            >
-              API 1
-            </Button>
-            <Button
-              color="inherit"
-              target="_blank"
-              href="https://disease.sh/v3/covid-19/countries?sort=cases"
-            >
-              API 2
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-    </div>
+    <HideOnScroll {...props}>
+      <AppBar className={styles.navbar}>
+        <Toolbar>
+          <Typography variant="h6" className={styles.title} align="center">
+            COVID-19 TRACKER
+          </Typography>
+          <Button
+            color="inherit"
+            target="_blank"
+            href="https://covid19.mathdro.id/api"
+          >
+            API 1
+          </Button>
+          <Button
+            color="inherit"
+            target="_blank"
+            href="https://disease.sh/v3/covid-19/countries?sort=cases"
+          >
+            API 2
+          </Button>
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
   );
 }

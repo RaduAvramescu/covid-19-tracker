@@ -16,13 +16,18 @@ const CardsContainer = ({
 
   return (
     <React.Fragment>
-      <Box mt="120px">
+      <Box mt="8rem">
         <Typography variant="h4" align="center">
           COUNTRY INFORMATION
         </Typography>
       </Box>
-      <Box className={styles.container} mt="2rem" mb="2rem">
-        <Grid container spacing={2} justify="center" m="5rem">
+      <Box className={styles.container} py="2rem">
+        <Grid
+          className={styles.fullWidth}
+          container
+          spacing={4}
+          justify="center"
+        >
           <CardItem
             className="confirmed"
             cardName="Confirmed"
