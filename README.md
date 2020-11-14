@@ -15,7 +15,7 @@ This is the repository for my COVID-19 Tracker project.
 
 - HTML5
 - CSS3
-- Bootstrap
+- Material UI
 - JavaScript
 - React
 - ChartJS
