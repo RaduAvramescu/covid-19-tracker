@@ -33,6 +33,7 @@ export default function NavBar(props) {
             color="inherit"
             target="_blank"
             href="https://covid19.mathdro.id/api"
+            rel="noreferrer"
           >
             API 1
           </Button>
@@ -40,6 +41,7 @@ export default function NavBar(props) {
             color="inherit"
             target="_blank"
             href="https://disease.sh/v3/covid-19/countries?sort=cases"
+            rel="noreferrer"
           >
             API 2
           </Button>
